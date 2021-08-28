@@ -1,6 +1,6 @@
 'use strict';
 
-const { password } = require("../../config/database");
+//const { password } = require("../../config/database");
 
 module.exports = {
   up:  (queryInterface, Sequelize) => {

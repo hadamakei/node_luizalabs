@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+//import bcrypt from 'bcryptjs';
 
 import User from '../models/User';
 import authConfig from '../../config/auth';
@@ -21,11 +21,11 @@ class SessionController{
        // )
        // tester
 
-        console.log('Compare', tester)
+        //console.log('Compare', tester)
 
         if(!(await user.checkPassword(password))){
             return res.status(400).json({ message: 'Senha incorreta.'});
-        }
+        };
 
         const { id, name } = user;
 
@@ -38,7 +38,7 @@ class SessionController{
             token: jwt.sign({ id, name, email }, authConfig.secret, {
                 expiresIn: authConfig.expiresIn,
             })
-        })
+        });
     }
 }
 
